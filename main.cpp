@@ -74,7 +74,7 @@ int main(int argc, char** argv){
             prefixes.push_back(line);
         }
     }
-    
+
     vector<Movie> topMovies;
     vector<string> topPrefixes;
 
@@ -103,7 +103,7 @@ int main(int argc, char** argv){
         topMovies.push_back(moviesWithPrefix[0]);
         topPrefixes.push_back(pre);                     // keeps prefix and best movie paired
         for (int i = 0; i < (int)moviesWithPrefix.size(); i++){
-            cout << moviesWithPrefix[i] << '\n';
+            cout << moviesWithPrefix[i];
         }
         cout << '\n';                                   // blank line after each found block
     }
@@ -114,9 +114,9 @@ int main(int argc, char** argv){
     //  For each prefix,
     //  Print the highest rated movie with that prefix if it exists.
     int i = 0;
-    for (string pre: prefixes){
-        cout << "Best movie with prefix " << pre << " is: " << topMovies[i].getName() << " with rating " << std::fixed << std::setprecision(1) << topMovies[i].getRating() << endl;
-        i++;
+    for (int i = 0; i < (int)topMovies.size(); i++){
+        cout << "Best movie with prefix " << topPrefixes[i] << " is: " << topMovies[i].getName()
+            << " with rating " << topMovies[i].getRating() << endl;
     }
 
     return 0;
