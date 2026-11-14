@@ -5,6 +5,7 @@
 
 #include "movies.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 Movie::Movie(const string& n, double r){

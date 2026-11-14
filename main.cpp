@@ -113,7 +113,6 @@ int main(int argc, char** argv){
 
     //  For each prefix,
     //  Print the highest rated movie with that prefix if it exists.
-    int i = 0;
     for (int i = 0; i < (int)topMovies.size(); i++){
         cout << "Best movie with prefix " << topPrefixes[i] << " is: " << topMovies[i].getName()
             << " with rating " << topMovies[i].getRating() << endl;
