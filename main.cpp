@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <set>
 #include <queue>
+#include <unordered_map>
 #include <sstream>
 using namespace std;
 
@@ -35,7 +36,7 @@ int main(int argc, char** argv){
     }
   
     // Create an object of a STL data-structure to store all the movies
-
+    vector<Movie> storage;
     string line, movieName;
     double movieRating;
     // Read each file and store the name and rating
@@ -44,12 +45,19 @@ int main(int argc, char** argv){
             // to construct your Movie objects
             // cout << movieName << " has rating " << movieRating << endl;
             // insert elements into your data structure
+            Movie m(movieName, movieRating);
+            storage.push_back(m);
     }
 
     movieFile.close();
 
+    sort(storage.begin(), storage.end(), sortByName);
+
     if (argc == 2){
             //print all the movies in ascending alphabetical order of movie names
+            for(auto it: storage){
+                cout << it;
+            }
             return 0;
     }
 
@@ -67,6 +75,15 @@ int main(int argc, char** argv){
         }
     }
 
+    for (string s: prefixes){
+        int lo = 0;
+        int hi = storage.size();
+        while (lo < hi){
+            int mid = lo + ((hi - lo) / 2);
+            
+        }
+        
+    }
     //  For each prefix,
     //  Find all movies that have that prefix and store them in an appropriate data structure
     //  If no movie with that prefix exists print the following message
