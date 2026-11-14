@@ -21,7 +21,7 @@ bool Movie::operator<(const Movie& rhs) const{
     if (rating == rhs.rating){
         return name < rhs.name;
     }
-    return rating < rhs.rating;
+    return rating > rhs.rating;
 }
 bool Movie::operator>(const Movie& rhs) const{
     return rhs < *this;
